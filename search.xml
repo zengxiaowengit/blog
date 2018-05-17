@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[博客里程碑]]></title>
+      <url>/2018/12/11/Milestone/</url>
+      <content type="html"><![CDATA[<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="基本十大排序算法"><a href="#基本十大排序算法" class="headerlink" title="基本十大排序算法"></a>基本十大排序算法</h3><pre><code>冒泡排序、快速排序、归并排序、插入排序、基数排序、桶排序、堆排序等。
+</code></pre><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><ul>
+<li>普通二叉树</li>
+<li>B树</li>
+<li>B+树</li>
+</ul>
+<h3 id="红黑树-AVL树"><a href="#红黑树-AVL树" class="headerlink" title="红黑树(AVL树)"></a>红黑树(AVL树)</h3><pre><code>插入平衡、删除平衡，节点的分裂、合并
+</code></pre><h3 id="jdk中的算法与数据结构"><a href="#jdk中的算法与数据结构" class="headerlink" title="jdk中的算法与数据结构"></a>jdk中的算法与数据结构</h3><ul>
+<li>HashMap、LinkedHashMap、ConcurrentHashMap、HashTable</li>
+<li>集合类，List，LinkedList、ArrayList、CopyOnWriteArrayList</li>
+<li>队列，ArrayBlockingQueue、LinkedBlockingQueue、SynchronousQueue、DelayQueue<br>Deque, 双端队列,环形队列</li>
+<li>链表</li>
+</ul>
+<h3 id="concurrent包"><a href="#concurrent包" class="headerlink" title="concurrent包"></a>concurrent包</h3><pre><code>并发比较难理解，易出错。需要单独拿出来学习理解。
+CountDownLatch
+ForkJoinPool
+CAS操作(CompareAndSet（CompareAndSwap），ABA问题，version可以解决。)
+</code></pre><h2 id="JVM底层原理"><a href="#JVM底层原理" class="headerlink" title="JVM底层原理"></a>JVM底层原理</h2><h3 id="java为什么能跨平台"><a href="#java为什么能跨平台" class="headerlink" title="java为什么能跨平台"></a>java为什么能跨平台</h3><pre><code>基于栈的数据操作。可跨平台。
+基于寄存器的数据操作。不可跨平台。优点：寄存器的操作比栈快。如：Google的arm架构和Android手机的架构系统。
+</code></pre><h3 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h3><ul>
+<li>新生代</li>
+<li>年轻代</li>
+<li>永久代<br>from区，to区</li>
+</ul>
+<h3 id="垃圾回收策略"><a href="#垃圾回收策略" class="headerlink" title="垃圾回收策略"></a>垃圾回收策略</h3><ul>
+<li>标记清除法</li>
+<li>复制算法</li>
+<li>分代收集</li>
+</ul>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
+<li>策略模式</li>
+<li>工厂模式</li>
+<li>抽象工厂模式</li>
+<li>门面模式</li>
+<li>适配器模式</li>
+<li>桥接模式</li>
+<li>责任链模式</li>
+<li>事件模式</li>
+<li>CQRS模式(命令和查询分离)</li>
+<li>观察者模式</li>
+<li>代理模式</li>
+</ul>
+<h3 id="Spring中的设计模式"><a href="#Spring中的设计模式" class="headerlink" title="Spring中的设计模式"></a>Spring中的设计模式</h3><ul>
+<li>策略模式（认证策略：cookie策略，session策略）</li>
+<li>责任链模式（Spring security的过滤器链验证）</li>
+<li>代理模式（AOP）</li>
+<li>观察者模式（listener）</li>
+</ul>
+<h2 id="Spring源码解析"><a href="#Spring源码解析" class="headerlink" title="Spring源码解析"></a>Spring源码解析</h2><ul>
+<li>IOC</li>
+<li>AOP</li>
+<li>Spring Session</li>
+<li>Spring Security</li>
+<li>Spring MVC<br>…</li>
+</ul>
+<h2 id="Mybatis源码解析"><a href="#Mybatis源码解析" class="headerlink" title="Mybatis源码解析"></a>Mybatis源码解析</h2><pre><code>基于责任链模式来实现功能，基于插件interceptor拦截Executor、statment、ResultSet实现功能增强
+</code></pre><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="Innodb-和-myisam"><a href="#Innodb-和-myisam" class="headerlink" title="Innodb 和 myisam"></a>Innodb 和 myisam</h3><pre><code>Innodb 索引和数据分离
+myisam索引和数据一起存放
+</code></pre><h3 id="索引原理"><a href="#索引原理" class="headerlink" title="索引原理"></a>索引原理</h3><ul>
+<li>hash索引</li>
+<li><p>B+树索引</p>
+<p>索引最大左匹配原则</p>
+</li>
+</ul>
+<h3 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h3><ul>
+<li>区分度越高的，使用越多的字段越应该放在最左边。如：时间。</li>
+<li>不建议对取值范围小的列做索引。<br>原因：二叉树的查找值越多查找区分度越大。最后没有区分度的值会退化为O(n)复杂度的顺序查找。</li>
+</ul>
+<h3 id="并发访问控制方案"><a href="#并发访问控制方案" class="headerlink" title="并发访问控制方案"></a>并发访问控制方案</h3><ul>
+<li><p>乐观锁</p>
+<p>添加version版本控制</p>
+</li>
+<li><p>悲观锁</p>
+<p>select for update。不建议使用。最优情况会锁住一行，如果没有走索引，最坏情况会锁住整个表，直到事务提交。</p>
+</li>
+</ul>
+<h3 id="大数据量，高可用方案"><a href="#大数据量，高可用方案" class="headerlink" title="大数据量，高可用方案"></a>大数据量，高可用方案</h3><ul>
+<li>主从高可用，读写分离</li>
+<li><p>分库分表</p>
+<p>按日期分、用户id的hash值分</p>
+</li>
+<li><p>跨库分页</p>
+</li>
+<li><p>数据库中间件</p>
+<p>sql路由、改写、聚合操作、join操作等。</p>
+</li>
+</ul>
+<h2 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h2><h3 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h3><pre><code>正常查找都是基于词，去文档中查找。倒排索引对文档进行分词，记录词对应的文档。
+查询时先做分词，再去做文档查找和匹配。
+</code></pre><h3 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h3><h3 id="Elastic-Search"><a href="#Elastic-Search" class="headerlink" title="Elastic Search"></a>Elastic Search</h3><pre><code>Kibana、Logstash
+</code></pre><h2 id="BI（商业智能）"><a href="#BI（商业智能）" class="headerlink" title="BI（商业智能）"></a>BI（商业智能）</h2><ul>
+<li><p>power BI</p>
+</li>
+<li><p>ETL（数据转换、清洗工具）</p>
+</li>
+<li><p>维表、事实表分析，数据详情，钻取</p>
+</li>
+<li><p>自己实现一个BI</p>
+</li>
+</ul>
+<h2 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h2><ul>
+<li>Spring Boot + dubbo</li>
+<li>Spring Cloud</li>
+<li>自建微服务(grpc + gateway)</li>
+</ul>
+<h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><pre><code>nginx 反向代理，负载均衡
+Swagger 接口文档管理，Umock模拟数据，前后端分离开发
+OAuth2.0登录。统一认证服务器
+</code></pre><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><pre><code>Restful Api
+</code></pre><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><pre><code>vue（可参考饿了么的element-ui）
+</code></pre><h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><h3 id="分布式数据一致性"><a href="#分布式数据一致性" class="headerlink" title="分布式数据一致性"></a>分布式数据一致性</h3><pre><code>paxos
+</code></pre><h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><pre><code>两阶段提交
+</code></pre><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><pre><code>基于redis
+基于zookeeper
+</code></pre><h3 id="分布式系统架构解耦合"><a href="#分布式系统架构解耦合" class="headerlink" title="分布式系统架构解耦合"></a>分布式系统架构解耦合</h3><pre><code>消息队列 rabbitMQ
+</code></pre><h2 id="机器学习，数据挖掘"><a href="#机器学习，数据挖掘" class="headerlink" title="机器学习，数据挖掘"></a>机器学习，数据挖掘</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><pre><code>决策树、贝叶斯
+</code></pre><h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><pre><code>k-means
+</code></pre><h3 id="递归神经网络"><a href="#递归神经网络" class="headerlink" title="递归神经网络"></a>递归神经网络</h3><pre><code>RNN
+</code></pre><h3 id="时间序列预测"><a href="#时间序列预测" class="headerlink" title="时间序列预测"></a>时间序列预测</h3><pre><code>LSTM
+</code></pre><h2 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h2><ul>
+<li>SQL注入</li>
+<li>XSS</li>
+<li>CSRF</li>
+<li>TCP 洪流攻击(syn报文重放)</li>
+<li>TCP 报文不确认ack, 占用连接</li>
+</ul>
+<h2 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h2><pre><code>（后边拆分到spring Cloud里和自建微服务里）
+</code></pre><ul>
+<li>日志系统    - ELK</li>
+<li>调用链路    - zipkin</li>
+<li>集群监控    - jmx监控收集到ELK中</li>
+<li>负载均衡    - 客户端/服务端</li>
+<li>docker容器集群部署</li>
+</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li>正则表达式</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Milestone </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Angular 5之Hello World]]></title>
+      <url>/2018/05/17/Angular-5%E4%B9%8BHello-World/</url>
+      <content type="html"><![CDATA[<h1 id="Angular5-简介"><a href="#Angular5-简介" class="headerlink" title="Angular5 简介"></a>Angular5 简介</h1><p>Angular是最近比较火的一个前端框架，基于ECMA Script的封装，Type Script变成了一个强类型，有范型，有接口，有类的语言。</p>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>首先需要安装angular cli，作为一个开发angular的代码模板生成利器。</p>
+<ul>
+<li><p>安装angular CLI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br><span class="line">ng --version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new hello-angular</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动本地服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ng serve</span><br><span class="line">#或者是:</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="生成第一个组件"><a href="#生成第一个组件" class="headerlink" title="生成第一个组件"></a>生成第一个组件</h1><ul>
+<li>新建组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ng generate component login --inline-template --inline-style</span><br><span class="line"># 或者是</span><br><span class="line">$ ng g c login -it -is # 表示新建组件，该组件使用内联模板和内联样式</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>运行完成之后可以看到自动生成了一个组件对应的代码文件。</p>
+<h1 id="使用第一个组件"><a href="#使用第一个组件" class="headerlink" title="使用第一个组件"></a>使用第一个组件</h1><p>生成的组件如何挂载到APP上去？<br>我们都知道angular是一个单页面应用，需要将组件挂载到app上。<br>生成的组件selector的值是：app-login，代表我们在HTML文件中引用的格式为：<app-login></app-login>。</p>
+<p>然后npm start即可在<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 下看到我们的第一个页面例子。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo博客使用指南]]></title>
+      <url>/2018/05/17/hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>node</li>
+<li>npm</li>
+<li>git</li>
+</ul>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="使用npm安装hexo"><a href="#使用npm安装hexo" class="headerlink" title="使用npm安装hexo"></a>使用npm安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br><span class="line">hexo -v </span><br><span class="line"><span class="comment">#正常执行说明安装成功</span></span><br></pre></td></tr></table></figure>
+<h3 id="hexo配置部署到github-io"><a href="#hexo配置部署到github-io" class="headerlink" title="hexo配置部署到github.io"></a>hexo配置部署到github.io</h3><pre><code>在_config.yml文件中，找到Deployment，然后按照如下修改：
+deploy:
+  type: git
+  repo: git@github.com:yourname/yourname.github.io.git
+  branch: master
+</code></pre><h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Create a new post</span></span><br><span class="line">hexo new <span class="string">"My New Post"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行本地服务器</span></span><br><span class="line">hexo server </span><br><span class="line">hexo s  <span class="comment">#简化版。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署到远程github</span></span><br><span class="line">hexo deploy</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[centOS下常用编辑命令-vi]]></title>
+      <url>/2018/04/13/centOS%E4%B8%8B%E5%B8%B8%E7%94%A8%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4-vi/</url>
+      <content type="html"><![CDATA[<h2 id="vi里常用命令"><a href="#vi里常用命令" class="headerlink" title="vi里常用命令"></a>vi里常用命令</h2><h3 id="查找定位"><a href="#查找定位" class="headerlink" title="查找定位"></a>查找定位</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">esc		退出编辑模式,进入指令模式</span><br><span class="line">h 		光标左移。或者Backspace</span><br><span class="line">l 		光标右移。或者space</span><br><span class="line">k		光标上移一行</span><br><span class="line">j		光标下移一行</span><br><span class="line">)		光标移至句尾</span><br><span class="line">(		光标移至句首</span><br><span class="line">&#125;		光标移至段落开头</span><br><span class="line">&#123;		光标移至段落结尾</span><br><span class="line">w		右移一个字至字首</span><br><span class="line">b		右移一个字至字首</span><br><span class="line">e		右移一个字至字尾</span><br><span class="line">M		光标移至屏幕中间行</span><br></pre></td></tr></table></figure>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a		光标后插入</span><br><span class="line">A		在当前行尾插入</span><br><span class="line">o		在当前行之下新开一行 </span><br><span class="line">O		在当前行之上新开一行 </span><br><span class="line">yy		复制当前行</span><br><span class="line">nyy		复制当前行开始的n行</span><br><span class="line">dd		剪切当前行</span><br><span class="line">p		在当前光标处下面粘贴内容</span><br><span class="line">P 		在当前光标处上面粘贴内容</span><br></pre></td></tr></table></figure>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r		替换当前字符 </span><br><span class="line">R		替换当前字符及其后的字符，直至按ESC键</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x或X		删除一个字符。x删除光标后的，X删除光标前的</span><br><span class="line"><span class="keyword">do</span>		删至行首</span><br><span class="line">d$		删除一行至行尾</span><br><span class="line">nd$		删除n行至行尾</span><br></pre></td></tr></table></figure>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/abc	从光标开始处向后搜索abc</span><br><span class="line">?abc	从光标开始处向前搜索abc</span><br><span class="line">n		在同一方向重复上一次搜索命令</span><br><span class="line">N		在反方向上重复上一次搜索命令</span><br></pre></td></tr></table></figure>]]></content>
+      
+        
+        <tags>
+            
+            <tag> centOS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[多线程之信号量]]></title>
+      <url>/2018/04/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E4%BF%A1%E5%8F%B7%E9%87%8F/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[多线程之锁]]></title>
+      <url>/2018/04/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%94%81/</url>
+      <content type="html"><![CDATA[<h1 id="锁的概念"><a href="#锁的概念" class="headerlink" title="锁的概念"></a>锁的概念</h1><h1 id="常用的锁和机制"><a href="#常用的锁和机制" class="headerlink" title="常用的锁和机制"></a>常用的锁和机制</h1><h2 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h2><h2 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h2><h2 id="排它锁"><a href="#排它锁" class="headerlink" title="排它锁"></a>排它锁</h2><h2 id="共享锁"><a href="#共享锁" class="headerlink" title="共享锁"></a>共享锁</h2><h2 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h2><h1 id="分布式环境下的锁"><a href="#分布式环境下的锁" class="headerlink" title="分布式环境下的锁"></a>分布式环境下的锁</h1>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[多线程之资源访问控制]]></title>
+      <url>/2018/04/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[centOS一些常用命令和功能]]></title>
+      <url>/2018/03/16/centOS%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<h2 id="crontab配置定时任务"><a href="#crontab配置定时任务" class="headerlink" title="crontab配置定时任务"></a>crontab配置定时任务</h2><pre><code>示例：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加一个定时任务</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="comment"># 添加一行。每隔一分钟执行从github更新博客的任务。</span></span><br><span class="line">*/1 * * * * sudo /usr/share/nginx/html/zengxiaowengit.github.io/update.sh</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看crontab执行日志</span></span><br><span class="line">tail -f /var/<span class="built_in">log</span>/cron</span><br></pre></td></tr></table></figure>
+<h2 id="添加开机自动启动任务"><a href="#添加开机自动启动任务" class="headerlink" title="添加开机自动启动任务"></a>添加开机自动启动任务</h2><pre><code>例如：开机自动启动nginx
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.d/rc.local</span><br><span class="line"><span class="comment">#添加命令</span></span><br><span class="line">service nginx start</span><br></pre></td></tr></table></figure>
+<h2 id="上传文件到服务器指定目录"><a href="#上传文件到服务器指定目录" class="headerlink" title="上传文件到服务器指定目录"></a>上传文件到服务器指定目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#示例</span></span><br><span class="line">scp 1.txt root@172.16.52.84:/home</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> centOS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[nginx配置https服务器]]></title>
+      <url>/2018/03/15/nginx%E9%85%8D%E7%BD%AEhttps%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><pre><code>最近自己搞了个服务器搭建了博客，也需要配上https啊，不能落伍了。
+nginx配置比较简单，略过。
+有免费的SSL证书let&apos;s encrypt，我们可以借此搭建个https的服务。
+</code></pre><h2 id="配置环境和准备"><a href="#配置环境和准备" class="headerlink" title="配置环境和准备"></a>配置环境和准备</h2><pre><code>你需要先申请一个域名。便宜点的几块钱一个。建议使用阿里云申请域名，然后做个实名认证。
+先把博客搭建好，能正常访问，然后再做https的配置。
+
+centOS 7，linux或者其它环境需要酌情修改。不一定适用。
+
+如果nginx占用了80端口，需要先service stop 一下，安装配置完毕之后再重启。
+</code></pre><h2 id="免费搭建权威机构颁发的https证书-推荐"><a href="#免费搭建权威机构颁发的https证书-推荐" class="headerlink" title="免费搭建权威机构颁发的https证书(推荐)"></a>免费搭建权威机构颁发的https证书(推荐)</h2><a id="more"></a>    
+<h3 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<pre><code>acme.sh强大之处在于，可以自动配置DNS，不用去域名后台操作解析记录了，我的域名是在阿里注册的，下面给出阿里云解析的例子，
+其他地方注册的请参考这里自行修改：https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert
+
+网络上的教程基本上都是使用certbot，acme.sh比certbot的方式更加自动化，省去了手动去域名后台改DNS记录的步骤，而且不用依赖Python。
+推荐大家使用。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 替换成从阿里云后台获取的密钥</span></span><br><span class="line"><span class="built_in">export</span> Ali_Key=<span class="string">"xxxx"</span></span><br><span class="line"><span class="built_in">export</span> Ali_Secret=<span class="string">"xxxx"</span></span><br><span class="line"><span class="comment"># 换成自己的域名</span></span><br><span class="line">acme.sh --issue --dns dns_ali -d zengxiaowen.me -d *.zengxiaowen.me</span><br><span class="line"></span><br><span class="line"><span class="comment">#这里是通过线程休眠120秒等待DNS生效的方式，所以需要至少需要等待两分钟</span></span><br></pre></td></tr></table></figure>
+<pre><code>可以看到如下所示，申请成功。如果申请不成功可以多试几次。如果域名刚申请或者修改过DNS，一般需要申请几次才能成功。亲测。
+</code></pre><p><img src="/image/https_cert_verify.png" alt=""></p>
+<h3 id="配置nginx的conf"><a href="#配置nginx的conf" class="headerlink" title="配置nginx的conf"></a>配置nginx的conf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		#listen       80; 配置了ssl，可以重定向到https，不开80端口。</span><br><span class="line">		server_name  www.zengxiaowen.me;</span><br><span class="line">		# force redirect http to https</span><br><span class="line">		rewrite ^(.*) https://$server_name$1 permanent;</span><br><span class="line">	</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		ssl_certificate /root/.acme.sh/zengxiaowen.me/fullchain.cer;</span><br><span class="line">		ssl_certificate_key /root/.acme.sh/zengxiaowen.me/zengxiaowen.me.key;</span><br><span class="line">		keepalive_timeout   70;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用openssl搭建非权威机构颁发的证书的https-不推荐"><a href="#使用openssl搭建非权威机构颁发的证书的https-不推荐" class="headerlink" title="使用openssl搭建非权威机构颁发的证书的https(不推荐)"></a>使用openssl搭建非权威机构颁发的证书的https(不推荐)</h2><pre><code>此种方式申请的证书会有不安全的标识。因为不是权威机构颁发的证书，是自己签发的。不推荐使用。
+</code></pre><h3 id="使用openssl步骤"><a href="#使用openssl步骤" class="headerlink" title="使用openssl步骤"></a>使用openssl步骤</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /etc/nginx/ssl</span><br><span class="line">sudo openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt</span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/conf.d</span><br><span class="line">cp default.conf default.conf.origin</span><br><span class="line">vi default.conf</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置的内容"><a href="#修改配置的内容" class="headerlink" title="修改配置的内容"></a>修改配置的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen       80;  #remove this line if you want to disable http</span><br><span class="line">	server_name  www.zengxiaowen.me;</span><br><span class="line">	rewrite ^ https://$http_host$request_uri? permanent;    # force redirect http to https</span><br><span class="line"></span><br><span class="line">	listen 443 ssl;</span><br><span class="line">	ssl_certificate /etc/nginx/ssl/nginx.crt;</span><br><span class="line">	ssl_certificate_key /etc/nginx/ssl/nginx.key;</span><br><span class="line">	keepalive_timeout   70;</span><br><span class="line"></span><br><span class="line">	fastcgi_param   HTTPS               on;</span><br><span class="line">	fastcgi_param   HTTP_SCHEME         https;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> https </tag>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[centOS下oh-my-zsh安装]]></title>
+      <url>/2018/03/15/centOS%E4%B8%8Boh-my-zsh%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>centOS下安装oh-my-zsh 和 autojump还没有那么顺利。
+整理下。以后用到。存之。
+</code></pre><h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install zsh</span><br></pre></td></tr></table></figure>
+<h2 id="安装autojump"><a href="#安装autojump" class="headerlink" title="安装autojump"></a>安装autojump</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意此处不是autojump. centOS需要其他支持。</span></span><br><span class="line">yum install autojump-zsh</span><br></pre></td></tr></table></figure>
+<h2 id="修改-zshrc"><a href="#修改-zshrc" class="headerlink" title="修改~/.zshrc"></a>修改~/.zshrc</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加一行</span></span><br><span class="line"><span class="built_in">alias</span> j=autojump </span><br><span class="line"></span><br><span class="line"><span class="comment">#修改plugins	</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">  autojump</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">#退出文件，生效配置。</span></span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化autojump.在bash下，不要在zsh下生效。</span></span><br><span class="line"><span class="built_in">source</span> /usr/share/autojump/autojump.bash on startup</span><br></pre></td></tr></table></figure>
+<h2 id="安装问题排查"><a href="#安装问题排查" class="headerlink" title="安装问题排查"></a>安装问题排查</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看安装路径</span></span><br><span class="line">rpm -qa | grep autojump</span><br><span class="line">rpm -ql autojump</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换为默认bash</span></span><br><span class="line">chsh -s /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化autojump</span></span><br><span class="line"><span class="built_in">source</span> /usr/share/autojump/autojump.bash on startup</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> centOS </tag>
+            
+            <tag> zsh </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[数据库索引优化]]></title>
+      <url>/2018/01/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/</url>
+      <content type="html"></content>
+      
+        
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[数据库索引原理]]></title>
+      <url>/2018/01/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95%E5%8E%9F%E7%90%86/</url>
+      <content type="html"><![CDATA[<h2 id="B-树索引"><a href="#B-树索引" class="headerlink" title="B+树索引"></a>B+树索引</h2><h2 id="hash索引"><a href="#hash索引" class="headerlink" title="hash索引"></a>hash索引</h2><h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><h2 id="MySQL-中的-innodb-和-myisam"><a href="#MySQL-中的-innodb-和-myisam" class="headerlink" title="MySQL 中的 innodb 和 myisam"></a>MySQL 中的 innodb 和 myisam</h2><h2 id="建索引的原则"><a href="#建索引的原则" class="headerlink" title="建索引的原则"></a>建索引的原则</h2><h3 id="最左前缀匹配"><a href="#最左前缀匹配" class="headerlink" title="最左前缀匹配"></a>最左前缀匹配</h3><h3 id="值尽量分散"><a href="#值尽量分散" class="headerlink" title="值尽量分散"></a>值尽量分散</h3><pre><code>值分散才能起到过滤数据的效果。
+举个例子，比如status字段，只有0，1两个取值，平均只能过滤一半的数据。如果有10个取值，则平均能过滤90%的数据。
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[数据库表JOIN原理]]></title>
+      <url>/2018/01/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8JOIN%E5%8E%9F%E7%90%86/</url>
+      <content type="html"><![CDATA[<h2 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h2><pre><code>笛卡尔积的概念：将两个集合中的所有元素一一组合，得到一个 M*N 大小的新集合。
+对应到数据库操作上，笛卡尔积就是把两个表全连接起来。
+举个例子，两个表A, B。分别有100，10000条记录。
+如果做笛卡尔积，会组合100 * 10000次。产生这么多条记录。 
+</code></pre><h2 id="Simple-Nested-Loop-Join"><a href="#Simple-Nested-Loop-Join" class="headerlink" title="Simple Nested-Loop Join"></a>Simple Nested-Loop Join</h2><pre><code>简单的嵌套循环。其实就是两个for循环，以其中一个表作为驱动表，另一个表作为被驱动表，去做关联比较。
+伪代码如下：
+</code></pre><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> row1 <span class="keyword">in</span> t1</span><br><span class="line">       <span class="keyword">for</span> row2 <span class="keyword">in</span> t2</span><br><span class="line">           <span class="keyword">if</span> row2 match row1 <span class="comment">//row2与row1匹配，满足连接条件</span></span><br><span class="line">               join row1 and row2 into result <span class="comment">//连接row1和row2加入结果集</span></span><br></pre></td></tr></table></figure>
+<pre><code>如上面的例子，如果两个表以某个条件关联做JOIN操作，比较次数为100 * 10000。
+但是从计算机的存取来讲，需要考虑到磁盘的存取次数。这部分是影响性能的关键。根据性能优化的
+实际数据库比较的时候肯定不是每次取一条，比较，然后再取一条。这个只是基本的算法思路。
+</code></pre><h2 id="Block-Nested-Loop-Join"><a href="#Block-Nested-Loop-Join" class="headerlink" title="Block Nested-Loop Join"></a>Block Nested-Loop Join</h2><pre><code>区块嵌套循环是简单嵌套循环的一种优化。
+优化思路是：一次读取多条驱动表的记录出来，去和被驱动表做匹配，可以减少IO的读取次数。
+例如：以A表作为驱动表，    
+</code></pre><h2 id="Index-Nested-Loop-Join"><a href="#Index-Nested-Loop-Join" class="headerlink" title="Index Nested-Loop Join"></a>Index Nested-Loop Join</h2><h2 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h2><pre><code>左连接。以左表作为
+</code></pre><h2 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h2><h2 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h2>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CAS操作与volatile]]></title>
+      <url>/2018/01/25/CAS%E6%93%8D%E4%BD%9C%E4%B8%8Evolatile/</url>
+      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>CAS是什么？
+英文翻译是CompareAndSet或者（CompareAndSwap）。因为并发标志是在0和1之间抓换，所以叫比较-交换或者比较-设值都可以。
+
+
+以原子的方式更新这个更新器所管理的对象(obj)的成员变量，并且将这个成员变量更新为给定的更新后的值(update)如果当前值等于期望值(expect)时。
+
+当存在其他使用‘compareAndSet’或者’set’的情况下，这个方法可以确保是原子的。
+
+但如果你用其他的方式去改变这个成员变量时(如，使用直接赋值的方式 field=newField)，那么它是不会遵循这个原子性的。
+
+JDK中使用这种思想来确保并发的同步操作。如：ConcurrentHashMap。
+</code></pre><h2 id="CAS带来的ABA问题"><a href="#CAS带来的ABA问题" class="headerlink" title="CAS带来的ABA问题"></a>CAS带来的ABA问题</h2><h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><pre><code>volatile关键字主要是保证了编译器在做指令优化的时候，不会对加了改关键字的变量做乱序处理，也不会将该值保存在寄存器中，而是以内存中的为准。
+以此保证变量在线程间的可见性同步。
+</code></pre><h3 id="volatile写的内存语义："><a href="#volatile写的内存语义：" class="headerlink" title="volatile写的内存语义："></a>volatile写的内存语义：</h3><pre><code>当写一个 volatile 变量时，JMM 会把该线程对应的本地内存中的共享变量值刷新到主内存。
+</code></pre><h3 id="volatile读的内存语义："><a href="#volatile读的内存语义：" class="headerlink" title="volatile读的内存语义："></a>volatile读的内存语义：</h3><pre><code>当读一个 volatile 变量时，JMM 会把该线程对应的本地内存置为无效。线程接下来将从主内存中读取共享变量。
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 并发 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HashMap的实现原理]]></title>
+      <url>/2018/01/24/HashMap%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</url>
+      <content type="html"><![CDATA[<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><pre><code>Java中最常用的两种结构是数组和模拟指针(引用)，
+几乎所有的数据结构都可以利用这两种来组合实现。
+HashMap也是如此。实际上HashMap是一个“链表散列”。
+如下是它的数据结构： 
+</code></pre><p><img src="/image/hashmap.jpeg" alt=""></p>
+<h2 id="put操作"><a href="#put操作" class="headerlink" title="put操作"></a>put操作</h2><pre><code>1、根据key获取到对应的hash值。如果key为null，则调用putForNullKey，将hash值设置为0
+2、如果hash值处不存在Entry，则put，返回；
+3、如果hash值处已经存在Entry，则以链表的方式遍历，是否存在key冲突。
+   key冲突则用传入的value覆盖掉旧的value，同时把旧的value返回。
+   否则在table[hash]的位置插入Entry，把它的next指向原来在该位置的Entry。
+</code></pre><h2 id="get操作"><a href="#get操作" class="headerlink" title="get操作"></a>get操作</h2><pre><code>1、根据key计算对应的hash值（null hash值为0）。
+2、
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> jdk </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Synchronized原理]]></title>
+      <url>/2018/01/24/Synchronized%E5%8E%9F%E7%90%86/</url>
+      <content type="html"><![CDATA[<h2 id="Synchronized可以在哪些地方使用？"><a href="#Synchronized可以在哪些地方使用？" class="headerlink" title="Synchronized可以在哪些地方使用？"></a>Synchronized可以在哪些地方使用？</h2><pre><code>Synchronized可以在：
+</code></pre><ul>
+<li><p>普通方法同步</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>静态方法同步</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码块同步</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">synchronized</span>(<span class="keyword">this</span>)&#123;</span><br><span class="line">    	...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Synchronized-原理"><a href="#Synchronized-原理" class="headerlink" title="Synchronized 原理"></a>Synchronized 原理</h2><pre><code>每个对象有一个监视器锁（monitor）。当monitor被占用时就会处于锁定状态，线程执行monitorenter指令时尝试获取monitor的所有权，过程如下：
+
+1、如果monitor的进入数为0，则该线程进入monitor，然后将进入数设置为1，该线程即为monitor的所有者。
+
+2、如果线程已经占有该monitor，只是重新进入，则进入monitor的进入数加1.
+
+3.如果其他线程已经占用了monitor，则该线程进入阻塞状态，直到monitor的进入数为0，再重新尝试获取monitor的所有权。
+
+当synchronized作用在方法上时，锁住的便是对象实例（this）；当作用在静态方法时锁住的便是对象对应的Class实例。
+
+因为 Class数据存在于永久带，因此静态方法锁相当于该类的一个全局锁（通过方法上的ACC_SYNCHRONIZED标识符来完成）；
+
+当synchronized作用于某一个对象实例时，锁住的便是对应的代码块（通过指令monitorenter和monitorexit来完成）。
+</code></pre><h2 id="锁的执行机制"><a href="#锁的执行机制" class="headerlink" title="锁的执行机制"></a>锁的执行机制</h2><pre><code>自旋锁。
+CAS操作。（参看CAS的博客）属于一种乐观锁。
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 并发 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[正则表达式]]></title>
+      <url>/2018/01/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><pre><code>特殊字符的匹配需要用\来转义。
+</code></pre><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结尾位置</td>
+</tr>
+<tr>
+<td>()</td>
+<td>一个字表达式的开始和结束</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符 \n 之外的任何单字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符</td>
+</tr>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>标记限定符表达式的开始</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>标记限定符表达式的开始</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><pre><code>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。
+有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。
+</code></pre><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo<em> 能匹配 “z” 以及 “zoo”。</em> 等价于{0,}。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 、 “does” 中的 “does” 、 “doxy” 中的 “do” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td>[a-z,0-9]</td>
+<td>字符或者数字范围。匹配任意字符或者数字。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 正则表达式 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[学习资源]]></title>
+      <url>/2018/01/24/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</url>
+      <content type="html"><![CDATA[<ul>
+<li>python 相关书籍下载：<a href="https://salttiger.com/?s=python" target="_blank" rel="noopener">https://salttiger.com/?s=python</a></li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Elastic Search]]></title>
+      <url>/2018/01/17/Elastic-Search/</url>
+      <content type="html"><![CDATA[<h1 id="Elastic-Search"><a href="#Elastic-Search" class="headerlink" title="Elastic Search"></a>Elastic Search</h1><h2 id="ELK简介"><a href="#ELK简介" class="headerlink" title="ELK简介"></a>ELK简介</h2><pre><code>ES是目前最火的开源全文搜索引擎，基于倒排索引，可以支撑大数据量的检索、排序和TOP N搜索。
+使用ELK技术架构来搭建准实时日志搜索系统也是非常流行的处理方式。
+</code></pre><a id="more"></a>    
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="文档-Document"><a href="#文档-Document" class="headerlink" title="文档(Document)"></a>文档(Document)</h3><h3 id="索引-type"><a href="#索引-type" class="headerlink" title="索引(type)"></a>索引(type)</h3><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="查询所有"><a href="#查询所有" class="headerlink" title="查询所有"></a>查询所有</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_all"</span>: &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="标准查询"><a href="#标准查询" class="headerlink" title="标准查询"></a>标准查询</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"nameStandard"</span>: <span class="string">"江西"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="精确值匹配"><a href="#精确值匹配" class="headerlink" title="精确值匹配"></a>精确值匹配</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"signStatus"</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="精确值匹配-一般不分词-对于分词字段分词。"><a href="#精确值匹配-一般不分词-对于分词字段分词。" class="headerlink" title="精确值匹配,一般不分词.对于分词字段分词。"></a>精确值匹配,一般不分词.对于分词字段分词。</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"term"</span>: &#123;</span><br><span class="line">      <span class="attr">"nameStandard"</span>: &#123;</span><br><span class="line">        <span class="attr">"value"</span>: <span class="string">"王"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多值匹配-分词"><a href="#多值匹配-分词" class="headerlink" title="多值匹配-分词"></a>多值匹配-分词</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"multi_match"</span>: &#123;</span><br><span class="line">        <span class="attr">"query"</span>:    <span class="string">"猎头公司"</span>,</span><br><span class="line">        <span class="attr">"fields"</span>:   [ <span class="string">"nameStandard"</span>, <span class="string">"bd.nameStandard"</span> ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多值匹配"><a href="#多值匹配" class="headerlink" title="多值匹配"></a>多值匹配</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"multi_match"</span>: &#123;</span><br><span class="line">        <span class="attr">"query"</span>:    <span class="number">6</span>,</span><br><span class="line">        <span class="attr">"fields"</span>:   [ <span class="string">"qaStatus"</span>, <span class="string">"signStatus"</span> ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="bool查询"><a href="#bool查询" class="headerlink" title="bool查询"></a>bool查询</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"bool"</span>: &#123;</span><br><span class="line">      <span class="attr">"must"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"match"</span>: &#123;</span><br><span class="line">            <span class="attr">"signStatus"</span>: <span class="number">6</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"must"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"match"</span>: &#123;</span><br><span class="line">            <span class="attr">"nameStandard"</span>: <span class="string">"猎头公司"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查询加结果排序"><a href="#查询加结果排序" class="headerlink" title="查询加结果排序"></a>查询加结果排序</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"signStatus"</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"sort"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: &#123;</span><br><span class="line">        <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查询排序加聚合"><a href="#查询排序加聚合" class="headerlink" title="查询排序加聚合"></a>查询排序加聚合</h3><pre><code>aggs即聚合信息。聚合信息的种类非常多，如：max, min, avg, sum, top N, group by 等。
+基本的聚合信息可以使用stats。
+基本聚合信息不满足的，可以使用extended_stats，有平方和、标准差、方差等。
+</code></pre><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">GET /organization/public/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"type"</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"sort"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: &#123;</span><br><span class="line">        <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"aggs"</span>: &#123;</span><br><span class="line">    <span class="attr">"statsCnt"</span>: &#123;</span><br><span class="line">      <span class="attr">"stats"</span>: &#123;</span><br><span class="line">        <span class="attr">"field"</span>: <span class="string">"signStatus"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"took"</span>: <span class="number">12</span>,</span><br><span class="line">  <span class="attr">"timed_out"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"_shards"</span>: &#123;</span><br><span class="line">    <span class="attr">"total"</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="attr">"successful"</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="attr">"failed"</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"hits"</span>: &#123;</span><br><span class="line">    <span class="attr">"total"</span>: <span class="number">340</span>,</span><br><span class="line">    <span class="attr">"max_score"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"hits"</span>: [&#123;</span><br><span class="line">    	...</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  "aggregations": &#123;</span><br><span class="line">    "statsCnt": &#123;</span><br><span class="line">      "count": 340,</span><br><span class="line">      "min": 1,</span><br><span class="line">      "max": 6,</span><br><span class="line">      "avg": 4.2176470588235295,</span><br><span class="line">      "sum": 1434</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>extend_stats输出结果示例:
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">"aggregations": &#123;</span><br><span class="line">    "statsCnt": &#123;</span><br><span class="line">      "count": 340,</span><br><span class="line">      "min": 1,</span><br><span class="line">      "max": 6,</span><br><span class="line">      "avg": 4.2176470588235295,</span><br><span class="line">      "sum": 1434,</span><br><span class="line">      "sum_of_squares": 6758,</span><br><span class="line">      "variance": 2.0879238754325264,</span><br><span class="line">      "std_deviation": 1.4449650083765095,</span><br><span class="line">      "std_deviation_bounds": &#123;</span><br><span class="line">        "upper": 7.107577075576549,</span><br><span class="line">        "lower": 1.3277170420705104</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h2 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h2>]]></content>
+      
+        
+        <tags>
+            
+            <tag> elastic-search </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[多线程之基本概念]]></title>
+      <url>/2018/01/17/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
+      <content type="html"><![CDATA[<h2 id="多线程的工作原理"><a href="#多线程的工作原理" class="headerlink" title="多线程的工作原理"></a>多线程的工作原理</h2><h2 id="ArrayBlockingQueue"><a href="#ArrayBlockingQueue" class="headerlink" title="ArrayBlockingQueue"></a>ArrayBlockingQueue</h2><p>使用场景、工作原理介绍。</p>
+<h2 id="LinkedBlockingQueue"><a href="#LinkedBlockingQueue" class="headerlink" title="LinkedBlockingQueue"></a>LinkedBlockingQueue</h2><h2 id="SynchronousQueue"><a href="#SynchronousQueue" class="headerlink" title="SynchronousQueue"></a>SynchronousQueue</h2><h2 id="如何确定运行线程数"><a href="#如何确定运行线程数" class="headerlink" title="如何确定运行线程数"></a>如何确定运行线程数</h2>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[多线程之批量查询更新案例]]></title>
+      <url>/2018/01/17/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%A1%88%E4%BE%8B/</url>
+      <content type="html"><![CDATA[<h2 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h2><pre><code>有这样一个场景：由于各种业务原因，我们需要批量更新一批历史数据。而数据量又非常大，单线程跑，要跑接近一个小时。
+现在只能改用多线程了。
+</code></pre><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre><code>参考如下代码：
+</code></pre><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractNThreadProcessor</span>:<span class="type">AbstractProcessor</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> LOGGER = LoggerFactory.getLogger(AbstractNThreadProcessor::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">val</span> cores = <span class="number">8</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> size = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">start</span><span class="params">()</span></span> &#123;</span><br><span class="line">        execute()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">fun</span> <span class="title">execute</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">val</span> pool = Executors.newFixedThreadPool(cores)</span><br><span class="line">        <span class="keyword">val</span> futureList: MutableList&lt;Future&lt;<span class="built_in">Int</span>&gt;&gt; = Lists.newLinkedList()</span><br><span class="line">        <span class="keyword">val</span> cnt = Count()</span><br><span class="line">        LOGGER.info(<span class="string">"count to update: <span class="variable">$cnt</span>"</span>)</span><br><span class="line">        <span class="keyword">val</span> block = cnt / size + <span class="number">1</span></span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">var</span> done = <span class="number">0</span>L</span><br><span class="line">        <span class="keyword">while</span> (i++ &lt;= block)&#123;</span><br><span class="line">            <span class="keyword">val</span> list = batchQuery(i, size)<span class="comment">//查询必须是同步。不能放到里边去异步操作</span></span><br><span class="line">            futureList.add(pool.submit(Callable&lt;<span class="built_in">Int</span>&gt; &#123;</span><br><span class="line">                batchUpdateRows(list)</span><br><span class="line">            &#125;))</span><br><span class="line">            <span class="keyword">if</span>(i % cores == <span class="number">0</span>)&#123;</span><br><span class="line">                done +=checkDone(futureList)</span><br><span class="line">                <span class="keyword">if</span>(i % (cores * <span class="number">10</span>) == <span class="number">0</span>)&#123;</span><br><span class="line">                    LOGGER.info(<span class="string">"checked: <span class="variable">$done</span>"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                futureList.clear()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        done +=checkDone(futureList)</span><br><span class="line">        futureList.clear()</span><br><span class="line">        LOGGER.info(<span class="string">"updated rows total: <span class="variable">$done</span>"</span>)</span><br><span class="line">        pool.shutdown()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 更新查出的一序列集合</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">abstract</span> <span class="function"><span class="keyword">fun</span> <span class="title">batchUpdateRows</span><span class="params">(list: <span class="type">List</span>&lt;<span class="type">ActionEvent</span>&gt;)</span></span>: <span class="built_in">Int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据条件批量查询出一批数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="function"><span class="keyword">fun</span> <span class="title">batchQuery</span><span class="params">(page: <span class="type">Int</span>, size: <span class="type">Int</span>)</span></span>: List&lt;ActionEvent&gt;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 需要更新的数据总数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="function"><span class="keyword">fun</span> <span class="title">Count</span><span class="params">()</span></span>:<span class="built_in">Long</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 检查更新了多少条数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">fun</span> <span class="title">checkDone</span><span class="params">(futures: <span class="type">List</span>&lt;<span class="type">Future</span>&lt;<span class="type">Int</span>&gt;&gt;)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> done = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> (futures.isNotEmpty()) &#123;</span><br><span class="line">            <span class="keyword">for</span> (ret <span class="keyword">in</span> futures) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    done += ret.<span class="keyword">get</span>(<span class="number">10</span>, TimeUnit.MINUTES)</span><br><span class="line">                &#125; <span class="keyword">catch</span> (e: InterruptedException) &#123;</span><br><span class="line">                    e.printStackTrace()</span><br><span class="line">                &#125; <span class="keyword">catch</span> (e: ExecutionException) &#123;</span><br><span class="line">                    e.printStackTrace()</span><br><span class="line">                &#125; <span class="keyword">catch</span> (e: TimeoutException) &#123;</span><br><span class="line">                    e.printStackTrace()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> done</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>简单的几十行代码。完成一个多线程任务。abstract的函数留给具体实现者去写吧。
+</code></pre><h2 id="引申：如何设置合理的线程数？如何控制并发线程数的数量不超预期？"><a href="#引申：如何设置合理的线程数？如何控制并发线程数的数量不超预期？" class="headerlink" title="引申：如何设置合理的线程数？如何控制并发线程数的数量不超预期？"></a>引申：如何设置合理的线程数？如何控制并发线程数的数量不超预期？</h2><pre><code>下一篇博客将讨论这个问题。
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> kotlin </tag>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[kotlin学习之Java对比]]></title>
+      <url>/2017/09/28/kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8BJava%E5%AF%B9%E6%AF%94/</url>
+      <content type="html"><![CDATA[<p>Kotlin 非常具有代表性，具有简明性和独特的表达能力，同时易于“并发编程”。<br>不过，Java8有一个巨大的进步，就是Stream API以及lambda表达式的引入，编程的思维有一定的进步，代码量一定程度减少，但是还不够。<br>Kotlin 的优势体现在哪里？为何 Java 程序员要转向 Kotlin？<br><a id="more"></a></p>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    println(<span class="string">"Hello Kotlin!"</span>)</span><br><span class="line"></span><br><span class="line">    sayHello(<span class="string">"World"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sayHello</span><span class="params">(name: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">    println(<span class="string">"Hello <span class="variable">$name</span>!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#集合框架</p>
+<ul>
+<li>sortedBy/groupBy使用</li>
+<li>firstOrNull，注意如果集合为空，不能用first</li>
+<li>any，filter使用</li>
+<li>toMap</li>
+<li>associateBy</li>
+<li>map to</li>
+<li>associate</li>
+<li><p>使用.filterNotNull()</p>
+<p>  举个例子</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>(<span class="keyword">val</span> name: String, <span class="keyword">val</span> age: <span class="built_in">Int</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> users = listOf(User(<span class="string">"A"</span>, <span class="number">1</span>), User(<span class="string">"B"</span>, <span class="number">2</span>), User(<span class="string">"C"</span>, <span class="number">3</span>), User(<span class="string">"D"</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    users.sortedBy &#123; it.age &#125;.reversed().forEach &#123;</span><br><span class="line">        println(it)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    users.groupBy &#123; it.age &#125;.forEach &#123;</span><br><span class="line">        println(it)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(users.any &#123; it.age &gt; <span class="number">1</span> &#125;)</span><br><span class="line"></span><br><span class="line">    users.filter &#123; it.age &gt; <span class="number">4</span> &#125;.first()</span><br><span class="line">    println(users.filter &#123; it.age &gt; <span class="number">4</span> &#125;.firstOrNull())</span><br><span class="line"></span><br><span class="line">    println(users.associateBy &#123; it.name &#125;)</span><br><span class="line"></span><br><span class="line">    println(users.map &#123; it.name to it.age &#125;.toMap())</span><br><span class="line"></span><br><span class="line">    println(users.associate &#123; it.name to it &#125;)</span><br><span class="line"></span><br><span class="line">    users.map &#123; it.name &#125;</span><br><span class="line">    println(users.filterNotNull())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="方法扩展"><a href="#方法扩展" class="headerlink" title="方法扩展"></a>方法扩展</h1><pre><code>这应该可以评为最强大的功能。
+</code></pre><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> Any.<span class="title">printIt</span><span class="params">()</span></span> = println(<span class="keyword">this</span>.toString())</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="string">"abc"</span>.printIt()</span><br><span class="line">    <span class="number">1</span>L.printIt()</span><br><span class="line">    User(<span class="string">"ABC"</span>, <span class="number">1</span>).printIt()</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"># 属性<span class="keyword">get</span>/<span class="keyword">set</span> 的使用</span><br><span class="line">```kotlin</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> page: <span class="built_in">Int</span> = <span class="number">1</span></span><br><span class="line">        <span class="keyword">set</span>(value) &#123;</span><br><span class="line">            <span class="keyword">if</span> (value == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> IllegalArgumentException()</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (value &lt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> IllegalArgumentException()</span><br><span class="line">            &#125;</span><br><span class="line">            field = value</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">var</span> size: <span class="built_in">Int</span> = <span class="number">20</span></span><br><span class="line">        <span class="keyword">get</span>() = field * <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">toString</span><span class="params">()</span></span>: String &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Page(page=<span class="variable">$page</span>, size=<span class="variable">$size</span>)"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> page = Page()</span><br><span class="line">    page.page = <span class="number">-1</span></span><br><span class="line">    page.size = <span class="number">2</span></span><br><span class="line">    page.printIt()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="更方便的方法重载"><a href="#更方便的方法重载" class="headerlink" title="更方便的方法重载"></a>更方便的方法重载</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JvmOverloads</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">show</span><span class="params">(name: <span class="type">String</span>, age: <span class="type">Int</span> = <span class="number">1</span>, gender: <span class="type">String</span> = <span class="string">"男"</span>)</span></span> &#123;</span><br><span class="line">    println(<span class="string">"name=<span class="variable">$name</span>, age=<span class="variable">$age</span>, gender=<span class="variable">$gender</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    show(<span class="string">"A"</span>)</span><br><span class="line">    show(<span class="string">"A"</span>, <span class="number">2</span>)</span><br><span class="line">    show(<span class="string">"A"</span>, <span class="number">3</span>, <span class="string">"男"</span>)</span><br><span class="line">    show(<span class="string">"A"</span>, gender = <span class="string">"男"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="静态方法使用"><a href="#静态方法使用" class="headerlink" title="静态方法使用"></a>静态方法使用</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Helper</span> </span>&#123;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">showSomething</span><span class="params">()</span></span> &#123;</span><br><span class="line">            println(<span class="string">"Something"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    Helper.showSomething()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="一些小点"><a href="#一些小点" class="headerlink" title="一些小点"></a>一些小点</h1><ul>
+<li>== 相当于equals</li>
+<li>isNullOrBlank, string可以判断null</li>
+<li>?:操作。避免Java烦人的 NullPointerException😠</li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> str1 = <span class="string">"abc"</span></span><br><span class="line">    <span class="keyword">val</span> str2 = String(<span class="string">"abc"</span>.toByteArray())</span><br><span class="line"></span><br><span class="line">    println(str1 == str2)</span><br><span class="line">    println(str1 === str2)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str3: String? = <span class="literal">null</span></span><br><span class="line">    println(str3.isNullOrBlank())</span><br><span class="line"></span><br><span class="line">    println(str3 ?: <span class="string">"empty string"</span>)</span><br><span class="line"></span><br><span class="line">    str3 = <span class="string">"1"</span></span><br><span class="line">    str3?.let &#123; print(it) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>if/else try/cache when，比switch强大太多</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> a = <span class="number">1</span></span><br><span class="line">    <span class="keyword">val</span> b = <span class="number">2</span></span><br><span class="line">    <span class="keyword">val</span> c = <span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br><span class="line">    println(c)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> d = <span class="keyword">when</span>(a) &#123;</span><br><span class="line">        <span class="number">1</span> -&gt; <span class="number">10</span></span><br><span class="line">        <span class="number">2</span> -&gt; <span class="number">20</span></span><br><span class="line">        <span class="keyword">else</span> -&gt; <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    println(d)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变长参数 array to vargs</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printAll</span><span class="params">(<span class="keyword">vararg</span> str: <span class="type">Any</span>)</span></span> &#123;</span><br><span class="line">    str.forEach &#123;</span><br><span class="line">        println(it)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    printAll(<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>)</span><br><span class="line">    printAll()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> abc = listOf(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br><span class="line">    printAll(*abc.toTypedArray())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>?.let{}使用，减少null判断</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Java</span></span><br><span class="line"><span class="keyword">if</span> (account.mobile != <span class="literal">null</span>) &#123;</span><br><span class="line">    account.mobile = <span class="string">"*****"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// kotlin一行搞定</span></span><br><span class="line">account.mobile?.let &#123; it = <span class="string">"******"</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多行字符串，写SQL爽不爽！</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> str = <span class="string">"""</span></span><br><span class="line"><span class="string">        a</span></span><br><span class="line"><span class="string">        b</span></span><br><span class="line"><span class="string">        c</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    str.printIt()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串插值</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> a = <span class="string">"world"</span></span><br><span class="line">println(<span class="string">"hello <span class="variable">$a</span>"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>try-with-resource的kotlin版本更容易</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//源码</span></span><br><span class="line"><span class="meta">@InlineOnly</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">inline</span> <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Closeable?, R&gt;</span> T.<span class="title">use</span><span class="params">(block: (<span class="type">T</span>)</span></span> -&gt; R): R &#123;</span><br><span class="line">    <span class="keyword">var</span> closed = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> block(<span class="keyword">this</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e: Exception) &#123;</span><br><span class="line">        closed = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>?.close()</span><br><span class="line">        &#125; <span class="keyword">catch</span> (closeException: Exception) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> e</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!closed) &#123;</span><br><span class="line">            <span class="keyword">this</span>?.close()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用法</span></span><br><span class="line"><span class="keyword">var</span> connection:Connection</span><br><span class="line">connection.use&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[kotlin学习之高阶函数]]></title>
+      <url>/2017/07/17/kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</url>
+      <content type="html"><![CDATA[<p>kotlin的高阶函数主要有：</p>
+<p>also, let, run, map,filter,apply。</p>
+<p>下面对他们做一个比较。</p>
+<a id="more"></a>
+<h2 id="针对对象"><a href="#针对对象" class="headerlink" title="针对对象"></a>针对对象</h2><pre><code>apply:无it，使用this。可以直接调用该对象的方法，处理之后返回该对象this。
+let:参数it，闭包返回
+also:
+run:无it，使用this。闭包返回
+use:参数it，闭包返回
+</code></pre><p>##针对集合<br>kotlin有专门针对集合遍历的高阶函数。</p>
+<pre><code>filter:顾名思义，是用来过滤集合中的元素的。表达式为true才添加入结果集。结果为list
+map   :遍历所有元素，闭包返回。结果为list
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
